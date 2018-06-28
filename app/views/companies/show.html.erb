@@ -1,0 +1,31 @@
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+ 
+<p>
+  <strong>Country:</strong>
+  <%= @company.country %>
+</p>
+  <strong>State:</strong>
+  <%= @company.state %>
+</p>
+ 
+<p>
+  <strong>city:</strong>
+  <%= @company.city %>
+</p>
+  <strong>Postal Code:</strong>
+  <%= @company.postalcode %>
+</p>
+ 
+<p>
+  <strong>Start Date:</strong>
+  <%= @company.startdate %>
+
+ 
+<p>
+  <strong>Active</strong>
+  <%= @company.text %>
+</p>
+<%= button_to 'Back', companies_path, :method => "get" %>

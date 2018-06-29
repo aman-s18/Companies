@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
     <title>Companies</title>
@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <div id="user_nav">
+
+  <% if user_signed_in? %> Signed In as <%= current_user.email %>.Not you?<br><br>
+  <%= current_user.firstname %><br><br>
+  <%= current_user.lastname %><br><br>
+  <%= current_user.companyid %><br><br>
+  <%= current_user.enddate %><br><br>
+  <%= current_user.startdate %><br><br>
+  <%= current_user.roleid %><br><br>
+  <%= current_user.monthly %><br><br>
+  
+ 
+
+    <%=link_to "Sign out",destroy_user_session_path, :method => :delete %>
+
+  <%else%>
+
+    <%=link_to "Sign up",new_user_registration_path %> or <%=link_to "Sign in", new_user_session_path %>
+
+  <%end%>
+
+</div>
     <%= yield %>
   </body>
 </html>

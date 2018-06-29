@@ -1,7 +1,24 @@
-<h1>New Company</h1>
-<%= form_with scope: :company, url: companies_path, local: true do |form| %>
+<h1>Edit Company</h1>
+ 
+<%= form_with(model: @company, local: true) do |form| %>
+ 
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@company.errors.count, "error") %> prohibited
+        this company from being saved:
+      </h2>
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <p>
+
+
+<p>
     <%= form.label :name %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
     <%= form.text_field :name%>
   </p>
@@ -25,8 +42,8 @@
 </p>
 <p>
     <%= form.label :startdate %>&nbsp&nbsp;&nbsp&nbsp;
-    <%= form.datetime_select :startdate %>&nbsp&nbsp;&nbsp&nbsp;
-    <%= check_box_tag "company[active]", 'yes', id:"active" %>Active
+    <%= form.text_field :startdate %>&nbsp&nbsp;&nbsp&nbsp;
+    <%= check_box_tag "Active", 'yes', id:"active" %>Active
   </p>
  
    <p>

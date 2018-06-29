@@ -1,0 +1,42 @@
+<h1>Add New User</h1>
+<%= form_with scope: :user, url: users_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :firstname %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
+    <%= form.text_field :firstname%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
+
+    <%= form.label :lastname %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+    <%= form.text_field :lastname %>
+  </p>
+
+  <p>
+    <%= form.label :email%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+    <%= form.text_field :email %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
+  
+    <%= form.label :monthly %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp
+    <%= form.text_field :monthly %> $ / INR
+  </p> 
+  <p>
+    <%= form.label :role_Id  %>&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+    <%= form.text_field :role_Id %>(Admin/Manager/User)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
+
+    <%= form.label :company_Id %>&nbsp&nbsp&nbsp&nbsp&nbsp;
+    <%= form.text_field :company_Id %>
+  </p>
+    <p>
+    <%= form.label :start_date %>&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp;
+    <%= form.text_field :start_date %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
+    <%= form.label :end_date %>&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp;
+    <%= form.text_field :end_date %>&nbsp&nbsp;&nbsp&nbsp;
+    <%= check_box_tag "Active", 'yes', id:"active" %>Active
+  </p>
+  <form action="/companies/index.html.erb" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+ 
+   <p>
+    <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', companies_path, :method => "get" %><%= button_to 'Go To Index', companies_path, :method => "get" %>
+  </p>
+<% end %>

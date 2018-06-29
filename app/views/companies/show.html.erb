@@ -1,13 +1,13 @@
 <p>
-  <strong>Name:</strong>
+  <strong>came:</strong>
   <%= @company.name %>
 </p>
  
 <p>
-  <strong>Country:</strong>
+  <strong>country:</strong>
   <%= @company.country %>
 </p>
-  <strong>State:</strong>
+  <strong>state:</strong>
   <%= @company.state %>
 </p>
  
@@ -15,17 +15,18 @@
   <strong>city:</strong>
   <%= @company.city %>
 </p>
-  <strong>Postal Code:</strong>
+  <strong>postalcode:</strong>
   <%= @company.postalcode %>
 </p>
  
 <p>
-  <strong>Start Date:</strong>
+  <strong>startdate:</strong>
   <%= @company.startdate %>
 
  
-<p>
-  <strong>Active</strong>
-  <%= @company.text %>
-</p>
+<br>
+<br>
+
+<%= button_to 'Edit', edit_company_path, :method => "get" %>
+
 <%= button_to 'Back', companies_path, :method => "get" %>

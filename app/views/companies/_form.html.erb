@@ -1,7 +1,7 @@
-<h1>New Company</h1>
 <%= form_with scope: :company, url: companies_path, local: true do |form| %>
-
-  <p>
+ 
+  
+<p>
     <%= form.label :name %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
     <%= form.text_field :name%>
   </p>
@@ -25,11 +25,12 @@
 </p>
 <p>
     <%= form.label :startdate %>&nbsp&nbsp;&nbsp&nbsp;
-    <%= form.datetime_select :startdate %>&nbsp&nbsp;&nbsp&nbsp;
-    <%= check_box_tag "company[active]", 'yes', id:"active" %>Active
+    <%= form.text_field :startdate %>&nbsp&nbsp;&nbsp&nbsp;
+    <%= check_box_tag "company[Acti]", 'yes', id:"active" %>Active
   </p>
  
    <p>
-    <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', companies_path, :method => "get" %><%= button_to 'Go To Index', companies_path, :method => "get" %>
+    <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', companies_path, :method => "get" %>
+    <%= button_to 'Go To Index', companies_path, :method => "get" %>
   </p>
 <% end %>

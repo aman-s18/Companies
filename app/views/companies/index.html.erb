@@ -8,7 +8,8 @@
     <th>&nbsp&nbsp&nbsp;City&nbsp&nbsp&nbsp;</th>
     <th>&nbsp&nbsp&nbsp;Postal Code&nbsp&nbsp&nbsp;</th>
     <th>&nbsp&nbsp&nbsp;Start Date&nbsp&nbsp&nbsp;</th>
-    <th>&nbsp&nbsp&nbsp;CRUD&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;Active&nbsp&nbsp&nbsp;</th>
+    <th colspan="3">&nbsp&nbsp&nbsp;CRUD&nbsp&nbsp&nbsp;</th>
   </tr>
  
   <% @companies.each do |company| %>
@@ -19,8 +20,14 @@
       <td><%= company.city %></td>
       <td><%= company.postalcode %></td>
       <td><%= company.startdate %></td>
+      <td><%= company.active %></td>
+
 
       <td><%= button_to 'Show', company_path(company), :method => "get" %></td>
+      <td><%= button_to 'Edit', edit_company_path(company), :method => "get" %></td>
+      <td><%= button_to 'Delete', company_path(company),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

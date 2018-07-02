@@ -1,4 +1,6 @@
-<h1>New Company</h1>
+<table border="3px">
+  <td>
+    <h1>New Company</h1>
 <%= form_with scope: :company, url: companies_path, local: true do |form| %>
 
   <p>
@@ -30,6 +32,9 @@
   </p>
  
    <p>
-    <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', companies_path, :method => "get" %><%= button_to 'Go To Index', companies_path, :method => "get" %>
+    <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', users_path, :method => "get" %><%= button_to 'Go To Index', companies_path, :method => "get" %>
+    <%= button_to 'Back To Home', welcome_index2_path, :method => "get" %>
+
   </p>
-<% end %>
+<% end %></td>
+</table>

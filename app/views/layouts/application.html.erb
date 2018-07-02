@@ -2,28 +2,44 @@
 <html>
   <head>
     <title>Companies</title>
+   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     
+
   </head>
+  
+
 
   <body>
+  
     <div id="user_nav">
-
-  <% if user_signed_in? %> Signed In as <%= current_user.email %>.Not you?<br><br>
-  <%= current_user.firstname %><br><br>
-  <%= current_user.lastname %><br><br>
-  <%= current_user.companyid %><br><br>
-  <%= current_user.enddate %><br><br>
-  <%= current_user.startdate %><br><br>
-  <%= current_user.roleid %><br><br>
-  <%= current_user.monthly %><br><br>
+    <table border="1px" bgcolor="powderblue">
+      <tr>
+  <b><%  if user_signed_in? %> Signed In as <%= current_user.email %>.Not you?<abbr title="Do you want add a new user you Sign Out First"><%=button_to "Sign out",destroy_user_session_path, :method => :delete %></abbr></b><br><br>
+<b>Current User Online*</b>
+  <th>First Name:</th>
+  <td><b><i><%= current_user.firstname %></i></b></td>
+  <th>Last Name:</th>
+  <td><b><i><%= current_user.lastname %></i></b></td>
+  <th>Company ID: Name</th>
+  <td><b><i><%= current_user.companyid %></i></b></td>
+  <th>Role ID:</th>
+  <td><b><i><%= current_user.roleid %></i></b></td>
+  <th>Start Date:</th>
+  <td><b><i><%= current_user.startdate %></i></b></td>
+  <th>End Date:</th>
+  <td><b><i><%= current_user.enddate %></i></b></td>
+  <th>Monthly:</th>
+  <td><b><i><%= current_user.monthly %></i></b></td>
   
  
+  </tr>
+ </table>
 
-    <%=link_to "Sign out",destroy_user_session_path, :method => :delete %>
+  
 
   <%else%>
 
@@ -32,6 +48,6 @@
   <%end%>
 
 </div>
-    <%= yield %>
+    <%= yield %>  
   </body>
 </html>

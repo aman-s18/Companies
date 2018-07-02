@@ -1,0 +1,45 @@
+<h1>Listing Users</h1>
+
+ 
+<table border="4pt" style="background-color:powderblue;">
+  <tr>
+    <th>&nbsp&nbsp&nbsp;First Name&nbsp&nbsp&nbsp;</th>
+     <th>&nbsp&nbsp&nbsp;Last Name&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;Company Id&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;Role Id&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;Monthly&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;Start Date&nbsp&nbsp&nbsp;</th>
+    <th>&nbsp&nbsp&nbsp;End Date&nbsp&nbsp&nbsp;</th>
+    <th colspan="3">&nbsp&nbsp&nbsp;CRUD&nbsp&nbsp&nbsp;</th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.firstname %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.companyid %></td>
+      <td><%= user.roleid %></td>
+      <td><%= user.monthly %></td>
+      <td><%= user.startdate %></td>
+      <td><%= user.enddate %></td>
+      
+
+
+      <td><%= button_to 'Show', user_path(user), :method => "get" %></td>
+      <td><%= button_to 'Edit', edit_user_registration_path, :method => "get" %></td>
+      <td><button onclick="myFunction2()">Delete</button>
+<script>
+function myFunction2() {
+    alert("Hey You Are UnHappy!! Do You Want Delete This Account So You Edit First");
+}
+</script></td>
+    </tr>
+  <% end %>
+</table>
+
+<button onclick="myFunction()">Add New User</button>
+<script>
+function myFunction() {
+    alert("Do you want add a new user you Sign Out First!");
+}
+</script><%= button_to 'Back To Home', welcome_index2_path, :method => "get" %>

@@ -1,14 +1,15 @@
 <h2>Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+ <table border="3px" bgcolor="#00FFFF">
+    <td>
 <div class="field">
     <%= f.label :firstname %><br>
     <%= f.text_field :firstname%>
     </div>
       <div class="field">
 
-    <%= f.label :lastname %>&<br>
+    <%= f.label :lastname %><br>
 
     <%= f.text_field :lastname %>
 </div>
@@ -40,7 +41,7 @@
       <div class="field">
     <%= f.label :enddate %>&nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.datetime_select :enddate %>
-    <%= check_box_tag "Active", 'yes', id:"active" %>Active
+    
 </div>
  <div class="field">
     <%= f.label :email %><br />
@@ -64,5 +65,8 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</td>
+</table>
+
 
 <%= render "devise/shared/links" %>

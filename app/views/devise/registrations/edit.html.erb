@@ -2,6 +2,49 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  <table border="3px" bgcolor="#00FFFF">
+    <td>
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname%>
+    </div>
+      <div class="field">
+
+    <%= f.label :lastname %><br>
+
+    <%= f.text_field :lastname %>
+</div>
+
+<div class="field">
+    <%= f.label :email%><br>
+
+    <%= f.text_field :email %>
+    </div>
+      <div class="field">
+  
+    <%= f.label :monthly %><br>
+
+    <%= f.text_field :monthly %> $ / INR
+</div>
+<div class="field">
+    <%= f.label :roleid  %><br>
+    <%= f.text_field :roleid %>(Admin/Manager/User)
+    </div>
+      <div class="field">
+
+    <%= f.label :companyid %><br>
+    <%= f.text_field :companyid %>
+</div>
+    <div class="field">
+    <%= f.label :startdate %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.datetime_select :startdate %>
+    </div>
+      <div class="field">
+    <%= f.label :enddate %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.datetime_select :enddate %>
+    
+</div>
+  
 
   <div class="field">
     <%= f.label :email %><br />
@@ -36,8 +79,14 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<table border="3px" bgcolor="#7FFF00">
+  <td>
+<h3><u>Cancel my account</u></h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<b>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></b>
 
-<%= link_to "Back", :back %>
+<%= button_to "Back", :back %>
+</td>
+</table>
+</td>
+</table>

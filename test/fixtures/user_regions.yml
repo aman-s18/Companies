@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  user_id: 
+  region_id: 1
+
+two:
+  id: 
+  user_id: 
+  region_id: 1

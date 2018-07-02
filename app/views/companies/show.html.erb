@@ -1,5 +1,8 @@
+<h2>Your Company Saved Successfully! Thank You!</h2>
+<table border="4px">
+  <td>
 <p>
-  <strong>came:</strong>
+  <strong>Name:</strong>
   <%= @company.name %>
 </p>
  
@@ -23,10 +26,13 @@
   <strong>startdate:</strong>
   <%= @company.startdate %>
 
- 
+ </p>
 <br>
 <br>
-
+</td>
+</table>
 <%= button_to 'Edit', edit_company_path, :method => "get" %>
 
 <%= button_to 'Back', companies_path, :method => "get" %>
+
+<%= button_to 'Back To Home', welcome_index2_path, :method => "get" %>

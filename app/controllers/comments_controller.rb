@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @company = Company.find(params[:company_id])
     @comment = @company.comments.create(comment_params)

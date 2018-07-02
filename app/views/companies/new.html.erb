@@ -7,20 +7,22 @@
     <%= form.label :name %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
     <%= form.text_field :name%>
   </p>
-
   <p>
-    <%= form.label :country %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-    <%= form.text_field :country %>
+     <%= form.country_select :country %>
   </p>
 
-  <p>
-    <%= form.label :state %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+  <div class="field">
+    <!-- State -->
+    <%= form.label :state %>
     <%= form.text_field :state %>
-  </p>
-  <p>
-    <%= form.label :city %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-    <%= form.text_field :city %>
-  </p> 
+
+  </div>
+
+  <div class="field">
+    <!-- City -->
+    <%= label_tag :city %>
+    <%= select_tag :city, options_for_select([]) %>
+  </div>
   <p>
     <%= form.label :postalcode %>&nbsp&nbsp;
     <%= form.text_field :postalcode %>

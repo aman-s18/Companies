@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_30_123012) do
+ActiveRecord::Schema.define(version: 2018_06_30_072829) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -73,13 +73,6 @@ ActiveRecord::Schema.define(version: 2018_06_30_123012) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.integer "roleid"
-    t.string "rolename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "states", force: :cascade do |t|
     t.string "state_name"
     t.datetime "created_at", null: false
@@ -89,13 +82,6 @@ ActiveRecord::Schema.define(version: 2018_06_30_123012) do
   create_table "user_regions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "region_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_roles", force: :cascade do |t|
-    t.integer "roleid"
-    t.string "rolename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index2'
   root 'welcome#index2'
+  get 'states/index'
+  get 'cities/index'
+
   devise_for :users
 	get 'companies/new'
 	get 'users/new'
@@ -8,6 +11,8 @@ Rails.application.routes.draw do
 	resources :users
   resources :roles
 	resources :companies
+get 'cities/:state', to: 'application#cities'
+resources :states, only: :index
 	resources :companies do
   resources :comments
   

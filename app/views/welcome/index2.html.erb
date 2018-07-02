@@ -4,14 +4,54 @@
 <title>CSS Template</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px 2px;
+  border-radius: 100px 20px;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+
 * {
     box-sizing: border-box;
 }
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:powderblue;
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
 
@@ -39,21 +79,19 @@ footer {
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-    nav, article {
-        width: 100%;
-        height: auto;
-    }
+
 }
 </style>
 </head>
 <body >
 <header>
   <h2>Welcome To My Company</h2>
-</header>
-<%= button_to 'Companies Index', companies_path, :method => 'get' %>&nbsp&nbsp;&nbsp&nbsp&nbsp;&nbsp&nbsp&nbsp;
-<%= button_to 'Add New Company', new_company_path, :method => 'get' %>&nbsp&nbsp&nbsp&nbsp&nbsp;
-<%= button_to 'Users Index', users_path, :method => 'get' %>&nbsp&nbsp&nbsp;&nbsp&nbsp;
+  </header>
+
+
+<span><%= button_to 'Companies Index', companies_path, :method => 'get' %></span><br><br>
+<span><%= button_to 'Add New Company', new_company_path, :method => 'get' %></span><br><br>
+<span><%= button_to 'Users Index', users_path, :method => 'get' %></span><br><br>
 <button onclick="myFunction()">Add New User</button>
 <script>
 function myFunction() {
@@ -62,7 +100,13 @@ function myFunction() {
 </script>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<h3><b><i><u>Follow Us</u></i></b></h3>
+<a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+<a href="https://twitter.com/Twitter" target="_blank" class="fa fa-twitter"></a>
+<a href="https://plus.google.com/discover?hl=en" target="_blank" class="fa fa-google"></a>
+<a href="https://in.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+<a href="https://www.youtube.com" target="_blank" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
 <footer>
   <marquee>This Page Created By Aman Sharma</marquee>
 </footer>

@@ -1,6 +1,11 @@
 class CompaniesController < ApplicationController
  
 before_action :authenticate_user!
+def country_name
+    country = ISO3166::Country[country_name]
+    country.translations[I18n.locale.to_s] || country.name
+  end
+
   def index
   @companies = Company.all
 end

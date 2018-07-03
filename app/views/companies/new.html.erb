@@ -20,8 +20,8 @@
 
   <div class="field">
     <!-- City -->
-    <%= label_tag :city %>
-    <%= select_tag :city, options_for_select([]) %>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
   </div>
   <p>
     <%= form.label :postalcode %>&nbsp&nbsp;
@@ -32,6 +32,8 @@
     <%= form.datetime_select :startdate %>&nbsp&nbsp;&nbsp&nbsp;
     <%= check_box_tag "company[active]", 'yes', id:"active" %>Active
   </p>
+  
+  
  
    <p>
     <%= form.submit %>&nbsp&nbsp&nbsp&nbsp&nbsp<%= button_to 'Back', users_path, :method => "get" %><%= button_to 'Go To Index', companies_path, :method => "get" %>

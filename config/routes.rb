@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   root 'welcome#index2'
   get 'states/index'
   get 'cities/index'
+  get 'user_regions/new'
 
   devise_for :users
 	get 'companies/new'
 	get 'users/new'
   get 'roles/role'
+  resources :user_regions
 	resources :users
   resources :roles
 	resources :companies

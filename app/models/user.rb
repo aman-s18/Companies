@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
   rolify
+  rolify :before_add => :before_add_method
+  
+  def before_add_method(role)
+  	
+  end
   after_create :assign_default_role
 
   def assign_default_role
-    self.add_role(:User) if self.roles.blank?
+    self.add_role(:newuser) if self.roles.blank?
   end
   
 

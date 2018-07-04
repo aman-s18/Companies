@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_03_074344) do
+ActiveRecord::Schema.define(version: 2018_07_04_101849) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -30,13 +30,16 @@ ActiveRecord::Schema.define(version: 2018_07_03_074344) do
   create_table "companies", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "country"
     t.string "name"
+    t.string "country"
     t.string "state"
     t.string "city"
-    t.string "postalcode"
+    t.integer "postalcode"
     t.boolean "active"
     t.datetime "startdate"
+    t.integer "country_id"
+    t.integer "state_id"
+    t.integer "city_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_07_03_074344) do
 
   create_table "images", force: :cascade do |t|
     t.integer "user_id"
-    t.string "real_id"
+    t.integer "real_id"
     t.string "image_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,7 +71,8 @@ ActiveRecord::Schema.define(version: 2018_07_03_074344) do
   end
 
   create_table "regions", force: :cascade do |t|
-    t.string "region_name"
+    t.integer "user_id"
+    t.integer "region_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,8 +95,7 @@ ActiveRecord::Schema.define(version: 2018_07_03_074344) do
   end
 
   create_table "user_regions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "region_id"
+    t.string "region_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,7 +116,7 @@ ActiveRecord::Schema.define(version: 2018_07_03_074344) do
     t.string "firstname"
     t.string "lastname"
     t.integer "companyid"
-    t.string "roleid"
+    t.integer "roleid"
     t.datetime "startdate"
     t.datetime "enddate"
     t.decimal "monthly"

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'states/index'
   get 'cities/index'
   get 'user_regions/new'
+  get 'countries/new'
 
   devise_for :users
 	get 'companies/new'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
 	resources :users
   resources :roles
 	resources :companies
+  resources :countries
 get 'cities/:state', to: 'application#cities'
 resources :states, only: :index
 	resources :companies do

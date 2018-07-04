@@ -8,15 +8,25 @@
  
 <p>
   <strong>country:</strong>
-  <%= @company.country %>
+  <% if @company.country_id.present? %>
+    <%= Country.find(@company.country_id).country_name %>
+  <%else%>
+  <%end%>
 </p>
   <strong>state:</strong>
-  <%= @company.state %>
+  <% if @company.state_id.present? %>
+    <%= State.find(@company.state_id).state_name %>
+  <%else%>
+  <%end%>
 </p>
  
 <p>
+
   <strong>city:</strong>
-  <%= @company.city %>
+  <% if @company.state_id.present? %>
+    <%= City.find(@company.city_id).city_name %>
+  <%else%>
+  <%end%>
 </p>
   <strong>postalcode:</strong>
   <%= @company.postalcode %>

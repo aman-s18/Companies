@@ -15,9 +15,12 @@
   <% @companies.each do |company| %>
     <tr>
       <td><%= company.name %></td>
-      <td><%= company.country %></td>
-      <td><%= company.state %></td>
-      <td><%= company.city %></td>
+      <% if company.country_id.present? %>
+        <td><%= Country.find(company.country_id).country_name %></td>
+      <%else%> 
+      <%end%> 
+      <td><%= State.find(company.state_id).state_name %></td>
+      <td><%= City.find(company.city_id).city_name %></td>
       <td><%= company.postalcode %></td>
       <td><%= company.startdate %></td>
       <td><%= company.active %></td>

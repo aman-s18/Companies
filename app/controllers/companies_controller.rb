@@ -1,10 +1,6 @@
 class CompaniesController < ApplicationController
- 
 before_action :authenticate_user!
-def country_name
-    country = ISO3166::Country[country_name]
-    country.translations[I18n.locale.to_s] || country.name
-  end
+
 
   def index
   @companies = Company.all
@@ -19,7 +15,7 @@ def new
   end
 def create
   @company = Company.new(company_params)
-  if @company.save
+  if @company.save!
     redirect_to @company
   else
     render 'new'
@@ -48,6 +44,6 @@ def destroy
  
 private
   def company_params
-    params.require(:company).permit(:name, :country, :state, :city, :postalcode, :startdate, :active)
+    params.require(:company).permit(:name, :country_id, :state_id, :city_id, :postalcode, :startdate, :active)
   end
 end

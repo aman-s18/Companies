@@ -3,10 +3,7 @@ class UsersController < ApplicationController
 	def new
 		
 	end
-  def 
-  user = User.find(1)
-  user.add_role :admin
-end
+ 
 	def index
     @users = User.all
   end

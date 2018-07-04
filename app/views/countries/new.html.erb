@@ -1,0 +1,17 @@
+<table border="3pt">
+
+<td>
+<h1>Add A Company</h1>
+<%= form_with scope: :country, url: countries_path, local: true do |form| %>
+<p>
+	
+	<%= form.label :Country_Name %>
+	<%= form.text_field :country_Name %>&nbsp<%= form.submit %>
+
+</p>
+
+
+<%end%>
+</td>
+
+</table>

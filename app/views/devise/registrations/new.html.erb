@@ -26,13 +26,13 @@
     <%= f.text_field :monthly %> $ / INR
 </div>
 <div class="field">
-    <%= f.label :roleid  %><br>
-    <%= f.text_field :roleid %>(Admin/Manager/User)
+    <%= f.label :role  %><br>
+    <%= f.select(:roleid, Role.all.collect {|u|[u.name, u.id]}, :prompt => 'Select') %>
     </div>
       <div class="field">
 
-    <%= f.label :companyid %><br>
-    <%= f.text_field :companyid %>
+    <%= f.label :company %><br>
+    <%= f.select(:companyid, Company.all.collect {|u|[u.name, u.id]}, :prompt => 'Select') %>
 </div>
     <div class="field">
     <%= f.label :startdate %>&nbsp;&nbsp;&nbsp;&nbsp;

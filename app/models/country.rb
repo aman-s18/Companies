@@ -1,3 +1,3 @@
 class Country < ApplicationRecord
-#belongs_to :company
+	validates_presence_of :country_name
 end

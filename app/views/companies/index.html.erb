@@ -19,8 +19,14 @@
         <td><%= Country.find(company.country_id).country_name %></td>
       <%else%> 
       <%end%> 
+      <% if company.state_id.present? %>
       <td><%= State.find(company.state_id).state_name %></td>
+      <%else%> 
+      <%end%> 
+      <% if company.city_id.present? %>
       <td><%= City.find(company.city_id).city_name %></td>
+      <%else%> 
+      <%end%> 
       <td><%= company.postalcode %></td>
       <td><%= company.startdate %></td>
       <td><%= company.active %></td>

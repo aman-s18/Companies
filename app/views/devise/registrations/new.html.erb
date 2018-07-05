@@ -15,9 +15,9 @@
 </div>
 
 <div class="field">
-    <%= f.label :email%><br>
+    <%= f.label :Alternate_Email%><br>
 
-    <%= f.text_field :email %>
+    <%= f.text_field :alternative_email %>
     </div>
       <div class="field">
   
@@ -26,7 +26,7 @@
     <%= f.text_field :monthly %> $ / INR
 </div>
 <div class="field">
-    <%= f.label :role  %><br>
+    <%= f.label :Role  %><br>
     <%= f.select(:roleid, Role.all.collect {|u|[u.name, u.id]}, :prompt => 'Select') %>
     </div>
       <div class="field">
@@ -65,10 +65,10 @@
   <div class="actions"><br>
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+
 </td>
 </table>
 
-
+<% end %>
 
 <%= render "devise/shared/links" %>

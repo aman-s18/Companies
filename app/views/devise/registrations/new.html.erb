@@ -60,7 +60,18 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div><br>
+  <div class="field">
+
+    <%= f.label :image, 'Upload Image' %><br><br>
+    <%= f.file_field :image, class: 'photo_upload' %>
+    
   </div>
+  <div id="target">
+    
+  </div>
+
+
 
   <div class="actions"><br>
     <%= f.submit "Sign up" %>

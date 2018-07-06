@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   rolify
   rolify :before_add => :before_add_method
+
+ mount_uploader :image, ImageUploader
   
   def before_add_method(role)
   	

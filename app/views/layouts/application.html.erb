@@ -36,6 +36,9 @@
   <td><b><i><%= current_user.enddate %></i></b></td>
   <th>Monthly:</th>
   <td><b><i><%= current_user.monthly %></i></b></td>
+  <th>Image:</th>
+  <td><b><i><%= image_tag(current_user.image.url(:thumb).to_s) %></i></b></td>
+
   
  
   </tr>

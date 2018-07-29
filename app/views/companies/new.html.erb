@@ -1,7 +1,22 @@
 <table border="3px">
   <td>
     <h1 class="new_company_id">New Company</h1>
-<%= form_with scope: :company, url: companies_path, local: true do |form| %>
+<%#= form_with scope: :company, url: companies_path, local: true do |form| %>
+<%= form_with model: @company, local: true do |form| %>
+
+<% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@company.errors.count, "error") %> prohibited
+        this company from being saved:
+      </h2>
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <p>
     <%= form.label :name %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
@@ -16,6 +31,7 @@
   <p>
     <%= form.label :State %>
      <%= form.select(:state_id, State.all.map{|u| [u.state_name, u.id]}, :prompt => "Select") %>
+     
   </p>
   <p>
     <%= form.label :City %>
@@ -30,6 +46,16 @@
     <%= form.datetime_select :startdate %>&nbsp&nbsp;&nbsp&nbsp;
     <%= check_box_tag "company[active]", 'yes', id:"active" %>Active
   </p>
+  <div class="field">
+
+    <%= form.label :image, "Upload Company's Image" %><br><br>
+    <%= form.file_field :image, class: 'photo_upload' %>
+    
+  </div>
+  <div id="target">
+    
+  </div>
+
   
   
  
@@ -38,6 +64,7 @@
     <%= button_to 'Back To Home', welcome_index2_path, :method => "get" %>
 
   </p>
+
 <% end %></td>
 </table>
 

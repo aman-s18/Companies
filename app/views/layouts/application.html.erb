@@ -24,10 +24,19 @@
   <td><b><i><%= current_user.firstname %></i></b></td>
   <th>Last Name:</th>
   <td><b><i><%= current_user.lastname %></i></b></td>
-  <th>Company ID:</th>
-  <td><b><i><%= current_user.companyid %></i></b></td>
-  <th>Role ID:</th>
-  <td><b><i><%= current_user.roleid %></i></b></td>
+  <th>User Company Name & Id:</th>
+  <% if current_user.companyid.present? %>
+  <td><b><i><%= Company.find(current_user.companyid).name %></i></b> 
+  <b><i>'&'&nbsp;<%= current_user.companyid %></i></b></td>
+  <%else%>
+  <%end%>
+  <th>User Role Name & Id:</th>
+  <% if current_user.roleid.present? %>
+  <td><b><i><%= Role.find(current_user.roleid).name %></i></b> 
+  <b><i>'&'&nbsp;<%= current_user.roleid %></i></b></td>
+  <%else%>
+  <%end%>
+  
   <th>Alternative Email</th>
   <td><b><i><%= current_user.alternative_email %></i></b></td>
   <th>Start Date:</th>

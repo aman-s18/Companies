@@ -13,8 +13,8 @@ ActiveAdmin.register Place do
 # end
 form do |form|
 	form.inputs do
-		form.input :place_name, :label => 'Place_name'
-		form.input :company_id, :label => 'Company_id', :as => :select, :collection => Company.all.map{|u| ["#{u.name} ", u.id]}
+		form.input :place_name, :label => 'Place_name', placeholder: "Place Name"
+		form.input :company_id, :label => 'Company_id',  :as => :select, :collection => Company.all.map{|u| ["#{u.name} ", u.id]}
 		#form.input :places, :as => :select2_multiple, :collection => Place.all
 		
 		end

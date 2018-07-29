@@ -9,6 +9,7 @@
     <th>&nbsp&nbsp&nbsp;Postal Code&nbsp&nbsp&nbsp;</th>
     <th>&nbsp&nbsp&nbsp;Start Date&nbsp&nbsp&nbsp;</th>
     <th>&nbsp&nbsp&nbsp;Active&nbsp&nbsp&nbsp;</th>
+    <th>Image</th>
     <th colspan="3">&nbsp&nbsp&nbsp;CRUD&nbsp&nbsp&nbsp;</th>
   </tr>
  
@@ -30,6 +31,7 @@
       <td><%= company.postalcode %></td>
       <td><%= company.startdate %></td>
       <td><%= company.active %></td>
+      <td><b><i><%= image_tag(company.image.url(:thumb).to_s) %></i></b></td>
 
 
       <td><%= button_to 'Show', company_path(company), :method => "get" %></td>
